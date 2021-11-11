@@ -1,0 +1,30 @@
+{
+  "name": "14_tech-blog",
+  "version": "1.0.0",
+  "description": "Tech_Blog",
+  "main": "server.js",
+  "scripts": {
+    "test": "jest",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vcapella/17_tech-blog.git"
+  },
+  "author": "victor",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vcapella/17_tech-blog/issues"
+  },
+  "homepage": "https://github.com/vcapella/17_tech-blog#readme",
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "bcrypt": "^5.0.0",
+    "connect-session-sequelize": "^7.0.4",
+    "express": "^4.17.1",
+    "express-handlebars": "^5.2.0",
+    "express-session": "^1.17.1",
+    "mysql2": "^2.2.5",
+    "sequelize": "^6.3.5"
+  }
+}
