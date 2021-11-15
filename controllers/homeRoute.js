@@ -4,7 +4,7 @@ const sequelize = require("../config/connection");
 
 router.get("/", (req, res) => {
   Post.findAll({
-    attributes: ["id", "post_text", "title", "created_at"],
+    attributes: ["id", "post_text", "title", "created_at"], //content can be 'post_text'
     include: [
       {
         model: Comment,
@@ -48,7 +48,8 @@ router.get("/post/:id", (req, res) => {
     where: {
       id: req.params.id,
     },
-    attributes: ["id", "title", "content", "created_at"],
+    //attributes: 'content' can be ---> 'post_text'
+    attributes: ["id", "title", "post_text", "created_at"],
     include: [
       {
         model: Comment,
@@ -72,7 +73,7 @@ router.get("/post/:id", (req, res) => {
 
       const post = dbPostData.get({ plain: true });
 
-      res.render("single-post", { post, loggedIn: req.session.loggedIn });
+      res.render("singlePost", { post, loggedIn: req.session.loggedIn });
     })
     .catch((err) => {
       console.log(err);

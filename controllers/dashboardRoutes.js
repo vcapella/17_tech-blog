@@ -8,7 +8,7 @@ router.get("/", withAuth, (req, res) => {
     where: {
       user_id: req.session.user_id,
     },
-    attributes: ["id", "post_text", "title", "created_at"],
+    attributes: ["id", "post_text", "title", "created_at"], //content --->post_text
     include: [
       {
         model: Comment,
@@ -39,7 +39,7 @@ router.get("/edit/:id", withAuth, (req, res) => {
     where: {
       id: req.params.id,
     },
-    attributes: ["id", "post_text", "title", "created_at"],
+    attributes: ["id", "post_text", "title", "created_at"], //content --->post_text
     include: [
       {
         model: User,
@@ -54,7 +54,7 @@ router.get("/edit/:id", withAuth, (req, res) => {
         },
       },
     ],
-  })
+  }) //starts to be different
     .then((dbPostData) => {
       if (!dbPostData) {
         res.status(404).json({ message: "No post found with this id" });
@@ -62,7 +62,7 @@ router.get("/edit/:id", withAuth, (req, res) => {
       }
 
       const post = dbPostData.get({ plain: true });
-      res.render("edit-post", { post, loggedIn: true });
+      res.render("editPost", { post, loggedIn: true });
     })
     .catch((err) => {
       console.log(err);
@@ -71,7 +71,7 @@ router.get("/edit/:id", withAuth, (req, res) => {
 });
 
 router.get("/new", (req, res) => {
-  res.render("add-post");
+  res.render("newPost");
 });
 
 module.exports = router;

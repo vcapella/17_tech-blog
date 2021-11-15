@@ -4,9 +4,9 @@ const sequelize = require("../../config/connection");
 const { Post, User, Comment } = require("../../models");
 
 router.get("/", (req, res) => {
-  console.log("======================");
+  console.log("======================"); //remove console log
   Post.findAll({
-    attributes: ["id", "post_text", "title", "created_at"],
+    attributes: ["id", "post_text", "title", "created_at"], //content  --> post_text
     order: [["created_at", "DESC"]],
     include: [
       {
@@ -35,7 +35,7 @@ router.get("/:id", (req, res) => {
     where: {
       id: req.params.id,
     },
-    attributes: ["id", "post_text", "title", "created_at"],
+    attributes: ["id", "post_text", "title", "created_at"], //content  --> post_text
     include: [
       {
         model: User,
@@ -65,10 +65,10 @@ router.get("/:id", (req, res) => {
 });
 
 router.post("/", withAuth, (req, res) => {
-  console.log("creating");
+  console.log("creating"); //remove console log
   Post.create({
     title: req.body.title,
-    content: req.body.post_content,
+    post_text: req.body.post_text, //post_content ???   content --->post_text
     user_id: req.session.user_id,
   })
     .then((dbPostData) => res.json(dbPostData))
@@ -82,7 +82,7 @@ router.put("/:id", withAuth, (req, res) => {
   Post.update(
     {
       title: req.body.title,
-      post_text: req.body.post_text,
+      post_text: req.body.post_text, //content ---> post_text
     },
     {
       where: {

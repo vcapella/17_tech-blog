@@ -10,9 +10,10 @@ const loginFormHandler = async (event) => {
       body: JSON.stringify({ email, password }),
       headers: { "Content-Type": "application/json" },
     });
-
+    console.log("TEST RESPONSE");
+    console.log(response);
     if (response.ok) {
-      document.location.replace("/profile");
+      document.location.replace("/dashboard");
     } else {
       alert(response.statusText);
     }

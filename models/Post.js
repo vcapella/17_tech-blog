@@ -22,14 +22,15 @@ Post.init(
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        len: [1],
+        len: [4],
       },
     },
     post_text: {
+      //post_text --->content
       type: DataTypes.TEXT,
       allowNull: false,
       validate: {
-        len: [1],
+        len: [4],
       },
     },
   },
