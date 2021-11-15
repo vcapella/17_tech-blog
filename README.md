@@ -48,7 +48,8 @@ THEN I am able to view comments but I am prompted to log in again before I can a
 
 ## Mock-Up
 
-![mockup](https://user-images.githubusercontent.com/90168071/141870873-0d5b0da8-c511-4a04-bd2e-86f36d502bfc.JPG)
+![mockup](https://user-images.githubusercontent.com/90168071/141870946-6de7a11b-b4f8-4ae2-b5a6-fa15a4acc1d1.JPG)
+
 
 ## [My Repo](https://github.com/vcapella/17_tech-blog)
 
