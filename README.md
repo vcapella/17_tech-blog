@@ -53,4 +53,4 @@ THEN I am able to view comments but I am prompted to log in again before I can a
 
 ## [My Repo](https://github.com/vcapella/17_tech-blog)
 
-## [LIVE APPLICATION](https://github.com/vcapella/17_tech-blog)
+## [LIVE APPLICATION](https://app-victor89.herokuapp.com/)
